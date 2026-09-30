@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedLink Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="dashboard-nav">
+  <div class="brand">🩸 RedLink</div>
+
+  <ul class="nav-links">
+    <li onclick="showTab('home')">Home</li>
+    <li onclick="showTab('profile')">Profile</li>
+    <li onclick="showTab('donate')">Donate Blood</li>
+    <li onclick="showTab('receive')">Receive Blood</li>
+    <li onclick="showTab('alerts')">Emergency</li>
+  </ul>
+
+  <!-- LOGIN MODAL -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span onclick="closeLogin()" class="close">&times;</span>
+      <h2>Login</h2>
+      <input type="email" placeholder="Email" aria-label="Email">
+      <input type="password" placeholder="Password" aria-label="Password">
+      <button>Login</button>
+    </div>
+  </div>
+
+  <!-- SIGNUP MODAL -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span onclick="closeSignup()" class="close">&times;</span>
+      <h2>Sign Up</h2>
+      <input type="text" placeholder="Full Name" aria-label="name">
+      <input type="email" placeholder="Email" aria-label="email">
+      <input type="password" placeholder="Password" aria-label="password">
+      <button>Create Account</button>
+    </div>
+  </div>
+
+  <div class="auth-buttons">
+    <button class="login-btn" onclick="openLogin()">Login</button>
+    <button class="signup-btn" onclick="openSignup()">Sign Up</button>
+  </div>
+</nav>
+
+<main class="dashboard">
+
+  <!-- HOME TAB -->
+  <section id="home" class="tab active">
+    <section class="hero">
+      <h2>Saving Lives, One <span class="highlight-drop">Drop</span> at a Time</h2>
+
+      <!-- AUTO SLIDER -->
+      <div class="slider">
+        <div class="slides">
+          <div class="slide">
+            <h3>Real-Time Blood Availability</h3>
+            <h5>Check live blood stock levels across all blood groups instantly</h5>
+          </div>
+
+          <div class="slide">
+            <h3>Find Blood Banks Instantly</h3>
+            <h5>Locate the nearest hospitals and blood banks near you</h5>
+          </div>
+
+          <div class="slide">
+            <h3>Emergency Prioritization</h3>
+            <h5>Critical requests get instant donor matching</h5>
+          </div>
+
+          <div class="slide">
+            <h3>Schedule Your Donation</h3>
+            <h5>Book donation slots and save lives easily</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="why-redlink">
+      <h2 class="section-title">Why RedLink?</h2>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="why-icon">⚡</span>
+          <h3>Fast Emergency Response</h3>
+          <p>Instant donor matching for critical blood requests</p>
+        </div>
+
+        <div class="why-card">
+          <span class="why-icon">🏥</span>
+          <h3>Connected Hospitals</h3>
+          <p>Unified network of blood banks & hospitals</p>
+        </div>
+
+        <div class="why-card">
+          <span class="why-icon">🌍</span>
+          <h3>Saves Lives Efficiently</h3>
+          <p>Smarter allocation of life-saving resources</p>
+        </div>
+
+        <div class="why-card">
+          <span class="why-icon">👥</span>
+          <h3>Donor Community</h3>
+          <p>Verified donors ready to help anytime</p>
+        </div>
+
+      </div>
+    </section>
+  </section>
+
+  <!-- PROFILE TAB -->
+  <section id="profile" class="tab">
+    <!-- PROFILE BANNER -->
+    <div class="profile-banner">
+      <div class="profile-left">
+        <div class="avatar">J</div>
+        <div>
+          <h1>Welcome back!</h1>
+          <p>Loading...</p>
+          <span class="blood-chip">Blood Type: Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS CARDS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h4>Total Donations</h4>
+        <h2>0</h2>
+        <span class="green-text">+0 this year</span>
+      </div>
+
+      <div class="stat-card">
+        <h4>Lives Impacted</h4>
+        <h2>0</h2>
+        <span class="green-text">+0 this month</span>
+      </div>
+
+      <div class="stat-card">
+        <h4>Next Donation</h4>
+        <h2>Not Scheduled</h2>
+        <span class="muted-text">Schedule one now!</span>
+      </div>
+
+      <div class="stat-card">
+        <h4>Achievement Points</h4>
+        <h2>0</h2>
+        <span class="green-text">Get started!</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATE TAB -->
+  <section id="donate" class="tab">
+    <!-- BANNER -->
+    <div class="banner">
+      <h1>BE THE LINK TO SAVE LIVES</h1>
+      <p>Donate Blood Now • Book an Appointment</p>
+      <button onclick="showTab('donate')">Book Appointment</button>
+    </div>
+
+    <h2>Donate Blood</h2>
+
+    <!-- BOOKING CARD -->
+    <div class="booking-card"> 
+      <h3>Schedule Your Donation</h3>
+
+      <!-- Replace the MAP section in your dashboard.html with this: -->
+
+<!-- MAP SECTION - FIXED -->
+<div class="map-section">
+  <h3>Nearby Blood Banks & Hospitals (Delhi)</h3>
+  
+  <!-- Option 1: Using Google My Maps Embed (No API key needed) -->
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.8939769189!2d77.04417!3d28.527553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1234567890"
+    width="100%"
+    height="400"
+    style="border:0; border-radius: 14px;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  
+  <!-- Alternative: Simple static map image if iframe doesn't work -->
+  <!-- Uncomment below if you want to use a static map instead -->
+  <!--
+  <img 
+    src="https://maps.googleapis.com/maps/api/staticmap?center=28.6139,77.2090&zoom=11&size=800x400&markers=color:red%7C28.5672,77.2100%7C28.6328,77.2197%7C28.5665,77.2000&key=YOUR_API_KEY"
+    alt="Blood Banks Map"
+    style="width: 100%; border-radius: 14px;"
+  />
+  -->
+</div>
+
+      <!-- BLOOD BANK LIST -->
+      <div class="hospital-list">
+        <p>Loading blood banks...</p>
+      </div>
+
+      <!-- DONATION TYPE -->
+      <div class="form-group">
+        <label>Donation Type</label>
+        <select>
+          <option>On-Site Donation (Blood Bank)</option>
+          <option>Home Donation (Medical Team Visit)</option>
+        </select>
+      </div>
+
+      <label><b>Location</b></label>
+      <select onchange="toggleAddress(this.value)">
+        <option value="detect">Detect Automatically</option>
+        <option value="manual">Enter Manually</option>
+      </select>
+
+      <div id="manualAddress" style="display:none;">
+        <label>Address</label>
+        <textarea placeholder="Enter full address"></textarea>
+      </div>
+
+      <!-- DATE & TIME -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Select Date</label>
+          <input type="date">
+        </div>
+
+        <div class="form-group">
+          <label>Select Time</label>
+          <select>
+            <option>09:00 AM - 11:00 AM</option>
+            <option>11:00 AM - 01:00 PM</option>
+            <option>02:00 PM - 04:00 PM</option>
+            <option>04:00 PM - 06:00 PM</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="scheduleDonationBtn" class="primary-btn">
+  Schedule Donation
+</button>
+
+    </div>
+  </section>
+
+  <!-- RECEIVE TAB -->
+  <section id="receive" class="tab">
+    <!-- BANNER -->
+    <div class="banner">
+      <h1>BE THE LINK TO SAVE LIVES</h1>
+      <p>Need Blood? Request Now • Fast Matching</p>
+      <button onclick="showTab('receive')">Request Blood</button>
+    </div>
+
+    <h2>Receive Blood</h2>
+
+    <div class="form-box">
+      <label>Patient Name</label>
+      <input type="text" placeholder="Enter patient name">
+
+      <label>Booking For</label>
+      <select>
+        <option>Myself</option>
+        <option>Someone Else</option>
+      </select>
+
+      <label>Blood Type Required</label>
+      <select aria-label="blood-type">
+        <option>A+</option><option>A-</option>
+        <option>B+</option><option>B-</option>
+        <option>O+</option><option>O-</option>
+        <option>AB+</option><option>AB-</option>
+      </select>
+
+      <label>Location</label>
+      <select onchange="toggleAddress(this.value)">
+        <option value="detect">Detect Automatically</option>
+        <option value="manual">Enter Manually</option>
+      </select>
+
+      <div id="manualAddress" style="display:none;">
+        <label>Address</label>
+        <textarea placeholder="Enter full address"></textarea>
+      </div>
+
+      <button class="primary-btn">Request Blood</button>
+    </div>
+  </section>
+
+  <!-- EMERGENCY TAB -->
+  <section id="alerts" class="tab">
+    <!-- BANNER -->
+    <div class="banner">
+      <h1>EMERGENCY BLOOD ALERTS</h1>
+      <p>Immediate action required — view critical needs now</p>
+      <button onclick="showTab('alerts')">View Alerts</button>
+    </div>
+
+    <h2>Emergency Alerts</h2>
+
+    <div class="alert-card" onclick="showTab('donate')">
+      🚨 O- blood urgently needed at AIIMS Delhi
+    </div>
+
+    <div class="alert-card" onclick="showTab('donate')">
+      🚨 AB+ shortage in South Delhi
+    </div>
+    
+    <div class="alert-card" onclick="showTab('donate')">
+      🚨 A- blood shortage at Fortis Hospital, New Delhi
+    </div>
+
+    <div class="alert-card" onclick="showTab('donate')">
+      🚨 B+ shortage Max Hospital
+    </div>
+  </section>
+
+</main>
+
+
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+<script src="api.js"></script>
+<script src="dashboard.js"></script>
+
+<!-- NEW: Chatbot Scripts -->
+<link rel="stylesheet" href="chatbot.css">
+<script src="chatbot.js"></script>
+
+</body>
+</html>
+</body>
+</html>

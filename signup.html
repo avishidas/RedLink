@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RedLink Sign Up</title>
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h2>Sign Up</h2>
+
+    <input id="fullName" placeholder="Full Name">
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+    <input id="bloodType" placeholder="Blood Type (O+, A+, etc)">
+    <input id="phone" placeholder="Phone">
+    <input id="city" placeholder="City">
+
+    <button type="button" onclick="signup()">Sign Up</button>
+
+    <p id="msg"></p>
+  </div>
+
+<script>
+async function signup() {
+  const res = await fetch("http://localhost:5000/api/auth/signup", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      fullName: fullName.value,
+      email: email.value,
+      password: password.value,
+      bloodType: bloodType.value,
+      phone: phone.value,
+      city: city.value
+    })
+  });
+
+  const data = await res.json();
+  document.getElementById("msg").innerText =
+    data.message || data.error;
+
+  if (data.token) {
+    localStorage.setItem("token", data.token);
+    window.location.href = "dashboard.html";
+  }
+}
+</script>
+
+</body>
+</html>

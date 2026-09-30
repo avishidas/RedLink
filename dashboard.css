@@ -1,0 +1,915 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #fff;
+}
+
+/* NAVBAR */
+.dashboard-nav {
+  background: #7f1d1d;
+  color: white;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 16px 40px;
+}
+/* Add these styles to your existing dashboard.css */
+
+/* Logout Button Styling */
+.logout-btn {
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: 1px solid white;
+  cursor: pointer;
+  font-weight: 600;
+  background: transparent;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: white;
+  color: #7f1d1d;
+}
+
+/* Results section for blood banks in receive tab */
+#autoResult {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+#autoResult h3 {
+  color: #7f1d1d;
+  margin-bottom: 20px;
+}
+
+/* Questionnaire styling improvements */
+#eligibility-questionnaire input[type="radio"] {
+  width: auto;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#eligibility-questionnaire label {
+  cursor: pointer;
+}
+
+/* Google Maps iframe fix */
+.map-section iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 14px;
+}
+
+/* Booking card when blood bank is selected */
+.booking-card h3 {
+  color: #7a0117;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* PROFILE BANNER */
+.profile-banner {
+  background: linear-gradient(90deg, #c4002f, #5b8ddb);
+  color: white;
+  padding: 40px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.profile-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  background: white;
+  color: #c4002f;
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-left h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.profile-left p {
+  margin: 5px 0;
+  opacity: 0.9;
+}
+
+.blood-chip {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.profile-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.notify-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.view-select {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* STATS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.stat-card h4 {
+  margin: 0;
+  color: #666;
+  font-weight: 500;
+}
+
+.stat-card h2 {
+  margin: 10px 0;
+  color: #111;
+  font-size: 30px;
+}
+
+.green-text {
+  color: #2e9e4f;
+  font-weight: 500;
+}
+
+.muted-text {
+  color: #888;
+}
+
+/* BANNER */
+.banner {
+  background: linear-gradient(to right, #7f1d1d, #dc2626);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.banner h1 {
+  font-size: 36px;
+}
+
+.banner button {
+  margin-top: 20px;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #7f1d1d;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* MAIN */
+.dashboard {
+  padding: 40px;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+/* DONATE LAYOUT */
+.donate-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* BOXES */
+.schedule-box,
+.map-box,
+.form-box {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* INPUTS */
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+/* BUTTON */
+.primary-btn {
+  background: #7f1d1d;
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-top: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* MAP */
+#map {
+  height: 280px;
+  border-radius: 14px;
+}
+
+/* ALERT */
+.alert-card {
+  background: #fee2e2;
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.alert-card:hover {
+  transform: scale(1.02);
+}
+
+
+.booking-card {
+  background: #ffffff;
+  color: #2c0000;
+  padding: 25px;
+  border-radius: 14px;
+  max-width: 800px;
+  margin: 30px auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.booking-card h3 {
+  color: #7a0117;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.checkbox-group {
+  margin: 15px 0;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #7a0117, #b11226);
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.map-section iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 14px;
+  margin: 20px 0;
+  border: none;
+}
+
+.hospital-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.hospital-card {
+  background: white;
+  color: #2c0000;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.hospital-card h4 {
+  color: #7a0117;
+  max-width: 100px;
+}
+
+.alert {
+  color: #b11226;
+  font-weight: bold;
+}
+
+/* ===============================
+   COLORED RADIO BUTTONS
+================================ */
+
+.radio-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  margin: 6px 10px 6px 0;
+  border: 2px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+/* Hide native radio */
+.radio-btn input {
+  display: none;
+}
+
+/* YES (Green) */
+.radio-btn.yes:hover {
+  border-color: #16a34a;
+  color: #166534;
+}
+
+.radio-btn.yes:has(input:checked) {
+  border-color: #16a34a;
+  background-color: rgba(22, 163, 74, 0.15);
+  color: #166534;
+}
+
+/* NO (Red) */
+.radio-btn.no:hover {
+  border-color: #dc2626;
+  color: #7f1d1d;
+}
+
+.radio-btn.no:has(input:checked) {
+  border-color: #dc2626;
+  background-color: rgba(220, 38, 38, 0.15);
+  color: #7f1d1d;
+}
+
+/* Focus (keyboard users) */
+.radio-btn input:focus-visible + span {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.direction-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #7a0117;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.results {
+  margin-top: 20px;
+}
+
+.hospital-card {
+  background: #fff;
+  color: #111;
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 6px solid maroon;
+}
+
+.arrival {
+  margin-top: 6px;
+  font-weight: 600;
+  color: #7f1d1d;
+}
+
+.direction-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: maroon;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.no-result {
+  color: #b91c1c;
+  font-weight: 600;
+}
+/* =====================
+   GLOBAL RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* =====================
+   BODY BACKGROUND
+===================== */
+body {
+  min-height: 100vh;
+  background: #f7f6f6; /* solid light red */
+  color: #000000; /* body text black */
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #8f0202; /* red navbar */
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff; /* white title */
+}
+
+.nav-buttons button {
+  margin-left: 10px;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.signup {
+  background: rgb(237, 201, 201);
+  color: rgb(6, 5, 5);
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: inherit;
+}
+
+/* Highlight the word 'Drop' in the hero heading */
+.hero h2 .highlight-drop {
+  color: #cc0000;
+}
+
+/* =====================
+   SLIDER (CENTER AUTO MOVING)
+===================== */
+.slider {
+  overflow: hidden;
+  width: 85%;
+  margin: auto;
+  background: rgb(255, 212, 212);
+  border-radius: 18px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  padding: 40px;
+  text-align: center;
+}
+
+.slide h3 {
+  font-size: 52px;
+  margin-bottom: 30px;
+  line-height: 1.1;
+}
+
+.slide h5 {
+  font-size: 22px;
+  opacity: 0.95;
+  line-height: 1.4;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 12px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.auth-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.login-btn,
+.signup-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.login-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.signup-btn {
+  background: white;
+  color: #b30000;
+}
+
+
+
+/* =====================
+   FEATURES SECTION
+===================== */
+.why-redlink {
+  padding: 80px 20px 100px;
+  max-width: 1500px;
+  margin: auto;
+  background: #facaca;
+  /*lightredbackgroundforWhyRedLinksection*/color: #000000;
+  /*ensurereadabledarktext*/border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+/* Heading */
+.section-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 60px;
+  letter-spacing: 0.6px;
+}
+
+/* Grid Layout: 4 on top, 2 centered below */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  justify-items: center;
+}
+
+/* Feature Card */
+/* Feature Card with Red Accent */
+.why-card {
+  width: 100%;
+  max-width: 260px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 0, 0.10),
+    rgba(255, 255, 255, 0.06)
+  );
+  backdrop-filter: blur(14px);
+  border-radius: 22px;
+  padding: 34px 26px;
+  border: 1px solid rgba(255, 80, 80, 0.25);
+  text-align: center;
+}
+
+/* Icon Styling with Red Glow */
+.why-icon {
+  font-size: 34px;
+  margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.18);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.25);
+}
+
+/* TITLE */
+.why-card h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* DESCRIPTION */
+.why-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-card:nth-child(5),
+  .why-card:nth-child(6) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================
+   MODALS (LOGIN / SIGNUP)
+===================== */
+.modal {
+  display: none;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.75);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  color: black;
+  width: 320px;
+  margin: 120px auto;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.modal-content input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 12px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+  background: linear-gradient(180deg, #020617, #020b1a);
+  color: #d1d5db;
+  padding: 60px 40px 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col h2,
+.footer-col h3 {
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+}
+
+/* Divider */
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  margin: 40px 0 20px;
+}
+
+/* Bottom Row */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  font-size: 13px;
+}
+
+/* Emergency Banner */
+.emergency {
+  margin: 30px auto 0;
+  max-width: 900px;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2a0b10, #0b1a2f);
+  color: #f87171;
+  font-size: 14px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #999;
+}
+
+.close:hover {
+  color: #333;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 12px;
+  background: #7a0117;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button, .nav-links li, .alert-card {
+  position: relative;
+  z-index: 1;
+  pointer-events: auto !important;
+}
+
+* {
+  pointer-events: auto;
+}

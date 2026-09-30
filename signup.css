@@ -1,0 +1,87 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8b0000, #e63946);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Signup card */
+.container {
+  background: #ffffff;
+  width: 360px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  color: #8b0000;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #e63946;
+  box-shadow: 0 0 5px rgba(230, 57, 70, 0.4);
+}
+
+/* Signup button */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #e63946;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #c1121f;
+}
+
+/* Message text */
+#msg {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Success & error styling */
+#msg.success { color: green; }
+#msg.error { color: red; }
+
+/* Responsive */
+@media (max-width: 420px) {
+  .container {
+    width: 90%;
+    padding: 25px;
+  }
+}
